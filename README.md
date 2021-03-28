@@ -17,17 +17,18 @@ You may use either Swing or JavaFX.
 The main specifications of the application are:
 # Compulsory 
 Create the following components:
-- [ ] The main frame of the application.
-- [ ] A configuration panel for introducing parameters regarding the shapes that will be drawn: the size, the number of sides, the stroke, etc.
-- [ ] The panel must be placed at the top part of the frame. The panel must contain at least one label and one input component for specifying the size of the component.
-- [ ] A canvas (drawing panel) for drawing various types of shapes. You must implement at least one shape type at your own choice. This panel must be placed in the center part of the frame.
-- [ ] When the users execute mouse pressed operation, a shape must be drawn at the mouse location. You must use the properties defined in the configuration panel (at least one) and generate random values for others (color, etc.).
-- [ ] A control panel for managing the image being created. This panel will contains the buttons: Load, Save, Reset, Exit and it will be placed at the bottom part of the frame.
-- [ ] Use a file chooser in order to specify the file where the image will be saved (or load).
+- [x] The main frame of the application.
+- [x] A configuration panel for introducing parameters regarding the shapes that will be drawn: the size, the number of sides, the stroke, etc.
+- [x] The panel must be placed at the top part of the frame. The panel must contain at least one label and one input component for specifying the size of the component.
+- [x] A canvas (drawing panel) for drawing various types of shapes. You must implement at least one shape type at your own choice. This panel must be placed in the center part of the frame.
+- [x] When the users execute mouse pressed operation, a shape must be drawn at the mouse location. You must use the properties defined in the configuration panel (at least one) and generate random values for others (color, etc.).
+- [x] A control panel for managing the image being created. This panel will contains the buttons: Load, Save, Reset, Exit and it will be placed at the bottom part of the frame.
+- [x] Use a file chooser in order to specify the file where the image will be saved (or load).
 ## Output 
-```
 
-```
+https://user-images.githubusercontent.com/75542257/112764211-2c2daf00-9010-11eb-8aee-ada7faebd889.mp4
+
+
 # Optional
 - [ ] Implement a retained mode drawing and add support for deleting shapes.
 - [ ] Add support for drawing multiple types of components. Consider creating a new panel, containing a list of available shapes.

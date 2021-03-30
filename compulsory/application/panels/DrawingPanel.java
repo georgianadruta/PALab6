@@ -2,7 +2,7 @@ package compulsory.application.panels;
 
 import compulsory.application.MainFrame;
 import compulsory.shapes.Circle;
-import compulsory.shapes.RegularPolygon;
+import optional.shapes.RegularPolygon;
 
 import javax.swing.*;
 import java.awt.*;
@@ -14,8 +14,8 @@ import java.util.Random;
 
 public class DrawingPanel extends JPanel {
     private final MainFrame frame;
-    private final int width;
-    private final int height;
+    private final static int width=800;
+    private final static int height=600;
     public BufferedImage image;
     private Graphics2D graphics;
 
@@ -26,8 +26,6 @@ public class DrawingPanel extends JPanel {
      */
     public DrawingPanel(MainFrame frame) {
         this.frame = frame;
-        this.width = frame.getWidth();
-        this.height = frame.getHeight();
         createOffscreenImage();
         init();
     }
@@ -36,17 +34,17 @@ public class DrawingPanel extends JPanel {
      * fill the image with white
      */
     public void createOffscreenImage() {
-        image = new BufferedImage(this.width, this.height, BufferedImage.TYPE_INT_ARGB);
+        image = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
         graphics = image.createGraphics();
         graphics.setColor(Color.WHITE);
-        graphics.fillRect(0, 0, this.width, this.height);
+        graphics.fillRect(0, 0, width, height);
     }
 
     /**
      *
      */
     private void init() {
-        setPreferredSize(new Dimension(this.width, this.height));
+        setPreferredSize(new Dimension(width, height));
         setBorder(BorderFactory.createEtchedBorder());
         this.addMouseListener(new MouseAdapter() {
             @Override
@@ -64,11 +62,23 @@ public class DrawingPanel extends JPanel {
      * @param y
      */
     private void drawShape(int x, int y) {
-        int radius = (int) frame.configPanel.shapeSize.getValue();
-        int sides = (int) frame.configPanel.sidesNumber.getValue();
+        int radius = (Integer) frame.configPanel.shapeSize.getValue();
+        setColor();
+        String type = (String) (frame.configPanel.shapeType.getSelectedItem());
+        if (type.equals("Polygon")) {
+            frame.configPanel.sidesNumber.setVisible(true);
+            frame.configPanel.sidesLabel.setVisible(true);
+            frame.configPanel.colorLabel.enable();
+            int sides = (Integer) (frame.configPanel.sidesNumber.getValue()); //get the value from UI (in Drawing.ConfigPanel)
+            graphics.fill(new RegularPolygon(x, y, radius, sides));
+        } else {
+            graphics.fill(new Circle(x, y, radius));
+        }
+    }
 
+    private void setColor(){
         Color color;
-        String col = String.valueOf(frame.configPanel.shapeColor.getSelectedItem());
+        String col = (String) (frame.configPanel.shapeColor.getSelectedItem());
         switch (col) {
             case "Black":
                 color = new Color(0, 0, 0);
@@ -92,16 +102,8 @@ public class DrawingPanel extends JPanel {
                 int B = rand.nextInt(255);
                 color = new Color(R, G, B);
         }
-        String type = String.valueOf(frame.configPanel.shapeType.getSelectedItem());
-        if (type.equals("Polygon")) {
-            // have some problems here :/ I couldn't figure out why
-            graphics.fill(new RegularPolygon(x, y, radius, sides));
-        } else {
-            graphics.fill(new Circle(x, y, radius));
-        }
         graphics.setColor(color);
     }
-
     @Override
     public void update(Graphics g) {
         repaint();

@@ -26,8 +26,7 @@ Create the following components:
 - [x] Use a file chooser in order to specify the file where the image will be saved (or load).
 ## Output 
 
-https://user-images.githubusercontent.com/75542257/112764211-2c2daf00-9010-11eb-8aee-ada7faebd889.mp4
-
+https://user-images.githubusercontent.com/75542257/113048360-1d2f3400-91ab-11eb-9f62-aa2d1af9308d.mp4
 
 # Optional
 - [ ] Implement a retained mode drawing and add support for deleting shapes.

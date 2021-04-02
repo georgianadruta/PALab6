@@ -29,14 +29,14 @@ Create the following components:
 https://user-images.githubusercontent.com/75542257/113048360-1d2f3400-91ab-11eb-9f62-aa2d1af9308d.mp4
 
 # Optional
-- [ ] Implement a retained mode drawing and add support for deleting shapes.
-- [ ] Add support for drawing multiple types of components. Consider creating a new panel, containing a list of available shapes.
-- [ ] The configuration panel must adapt according to the type of the selected shape. Implement at least two types of shapes.
+- [x] Implement a retained mode drawing and add support for deleting shapes.
+- [x] Add support for drawing multiple types of components. Consider creating a new panel, containing a list of available shapes.
+- [x] The configuration panel must adapt according to the type of the selected shape. Implement at least two types of shapes.
 - [ ] Implement free drawing and a simple shape recognition algorithm, capable of recognizing at least lines and circles.
 ## Output
-```
 
-```
+https://user-images.githubusercontent.com/75542257/113418431-264c1b00-93ce-11eb-98f9-80d0834f6fa6.mp4
+
 # Bonus 
 - [ ] Create a simple grammar in order to specify commands for drawing geometric shapes, for example fill circle name,x,y,radius,color.
 - [ ] The commands will be specified in a text area component. Important: parsing the strings using regular expressions or other "custom" methods is not accepted.
@@ -44,6 +44,3 @@ https://user-images.githubusercontent.com/75542257/113048360-1d2f3400-91ab-11eb-
 - [ ] Implement various commands at your own choice, for example draw, fill, delete, etc.
 - [ ] An additional bonus may be given for looping commands, like for, in order to perform a drawing several times.
 ## Output
-```
-
-```

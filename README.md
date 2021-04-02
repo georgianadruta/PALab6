@@ -32,10 +32,11 @@ https://user-images.githubusercontent.com/75542257/113048360-1d2f3400-91ab-11eb-
 - [x] Implement a retained mode drawing and add support for deleting shapes.
 - [x] Add support for drawing multiple types of components. Consider creating a new panel, containing a list of available shapes.
 - [x] The configuration panel must adapt according to the type of the selected shape. Implement at least two types of shapes.
-- [ ] Implement free drawing and a simple shape recognition algorithm, capable of recognizing at least lines and circles.
+- [x] Implement free drawing and a simple shape recognition algorithm, capable of recognizing at least lines and circles.
 ## Output
 
-https://user-images.githubusercontent.com/75542257/113418431-264c1b00-93ce-11eb-98f9-80d0834f6fa6.mp4
+https://user-images.githubusercontent.com/75542257/113444552-c751ca80-93fc-11eb-9594-d6996238c348.mp4
+ps: something strange happens to the line after I draw a flower or a cloud
 
 # Bonus 
 - [ ] Create a simple grammar in order to specify commands for drawing geometric shapes, for example fill circle name,x,y,radius,color.
